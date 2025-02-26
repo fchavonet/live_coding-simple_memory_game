@@ -6,3 +6,61 @@
     margin: 0;
     padding: 0;
 }
+
+/* GENERAL */
+body {
+    width: 100%;
+    height: 100svh;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SIMPLE MEMORY GAME */
+.card {
+    width: 10rem;
+    height: 10rem;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 0.5rem;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    background-color: #4caf50;
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    background-color: #cccccc;
+    cursor: pointer;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
