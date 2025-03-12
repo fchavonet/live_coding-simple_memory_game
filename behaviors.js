@@ -3,8 +3,6 @@ const gameContainer = document.getElementById("game-container");
 const symbols = ["🐱", "🐱", "🐶", "🐶", "🐸", "🐸", "🐼", "🐼"];
 const totalPairs = symbols.length / 2;
 
-const matchSound = new Audio("./assets/sounds/ding.mp3");
-
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
@@ -58,7 +56,7 @@ function handleCardClick(card) {
 	} else {
 		// Set the second selected card.
 		secondCard = card;
-		
+
 		// Increment the attempt counter.
 		attempts++;
 		console.log(attempts);
@@ -87,12 +85,13 @@ function checkForMatch() {
 	const secondSymbol = secondCard.querySelector(".card-front span").textContent;
 
 	if (firstSymbol === secondSymbol) {
-		
+
 		// Mark the cards as matched.
 		firstCard.classList.add("matched");
 		secondCard.classList.add("matched");
 
 		// Plays a sound when a pair is found.
+		const matchSound = new Audio("./assets/sounds/ding.mp3");
 		matchSound.play();
 
 		// Increment the match counter.
