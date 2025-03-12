@@ -3,6 +3,8 @@ const gameContainer = document.getElementById("game-container");
 const symbols = ["🐱", "🐱", "🐶", "🐶", "🐸", "🐸", "🐼", "🐼"];
 const totalPairs = symbols.length / 2;
 
+const matchSound = new Audio("./assets/sounds/ding.mp3");
+
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
@@ -56,6 +58,7 @@ function handleCardClick(card) {
 	} else {
 		// Set the second selected card.
 		secondCard = card;
+		
 		// Increment the attempt counter.
 		attempts++;
 		console.log(attempts);
@@ -84,18 +87,24 @@ function checkForMatch() {
 	const secondSymbol = secondCard.querySelector(".card-front span").textContent;
 
 	if (firstSymbol === secondSymbol) {
+		
 		// Mark the cards as matched.
 		firstCard.classList.add("matched");
 		secondCard.classList.add("matched");
 
+		// Plays a sound when a pair is found.
+		matchSound.play();
+
 		// Increment the match counter.
 		matches++;
+
 		// Reset the board for the next pair.
 		resetBoard()
 
 		if (matches === totalPairs) {
 			setTimeout(function () {
 				alert("Congratulations, you found all pairs in " + attempts + " attempts!!!");
+
 				// Restart the game after all pairs are found.
 				restartGame();
 			}, 1000);
@@ -107,8 +116,10 @@ function checkForMatch() {
 		setTimeout(function () {
 			// Unflip the first card.
 			firstCard.classList.remove("flipped");
+
 			// Unflip the second card.
 			secondCard.classList.remove("flipped");
+
 			// Reset the board for the next attempt.
 			resetBoard()
 		}, 1500);
@@ -128,6 +139,7 @@ function restartGame() {
 	lockBoard = true;
 
 	const allCards = document.querySelectorAll(".card");
+
 	allCards.forEach(function (card) {
 		// Unflip all cards and remove matched class.
 		card.classList.remove("flipped", "matched");
@@ -136,10 +148,13 @@ function restartGame() {
 	setTimeout(function () {
 		// Clear the game board.
 		gameContainer.innerHTML = "";
+
 		// Reset match counter.
 		matches = 0;
+
 		// Reset attempt counter.
 		attempts = 0;
+
 		// Reset the board state.
 		resetBoard();
 
