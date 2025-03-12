@@ -42,6 +42,11 @@ function createCard(symbol) {
 
 // Handle the click event on a card.
 function handleCardClick(card) {
+	// Prevent clicks when the board is locked.
+	if (lockBoard === true) {
+		return;
+	}
+
 	// Ignore if the player clicks the same card twice.
 	if (firstCard === card) {
 		return;
