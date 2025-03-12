@@ -5,12 +5,19 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    /* Prevent text selection by the user. */
+    user-select: none; /* Standard */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    -webkit-user-select: none; /* Chrome, Safari */
 }
 
 /* GENERAL */
 body {
     width: 100%;
     height: 100svh;
+    cursor: default;
 }
 
 main {
