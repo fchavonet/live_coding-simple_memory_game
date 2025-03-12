@@ -1,9 +1,12 @@
 const gameContainer = document.getElementById("game-container");
 
 const symbols = ["🐱", "🐱", "🐶", "🐶", "🐸", "🐸", "🐼", "🐼"];
+const totalPairs = symbols.length / 2;
 
 let firstCard = null;
 let secondCard = null;
+let lockBoard = false;
+let matches = 0;
 let attempts = 0;
 
 // Shuffle symbols and create the cards.
@@ -55,8 +58,9 @@ function handleCardClick(card) {
 		secondCard = card;
 		// Increment the attempt counter.
 		attempts++;
-
 		console.log(attempts);
+
+		checkForMatch()
 	}
 }
 
@@ -71,4 +75,42 @@ function shuffleAndDisplayCards() {
 	symbols.forEach(function (symbol) {
 		createCard(symbol);
 	});
+}
+
+// Check if the two selected cards match.
+function checkForMatch() {
+	const firstSymbol = firstCard.querySelector(".card-front span").textContent;
+	const secondSymbol = secondCard.querySelector(".card-front span").textContent;
+
+	if (firstSymbol === secondSymbol) {
+		// Increment the match counter.
+		matches++;
+		// Reset the board for the next pair.
+		resetBoard()
+
+		if (matches === totalPairs) {
+			setTimeout(function () {
+				alert("Congratulations, you found all pairs in " + attempts + " attempts!!!");
+			}, 1000);
+		}
+	} else {
+		// Lock the board to prevent further clicks.
+		lockBoard = true;
+
+		setTimeout(function () {
+			// Unflip the first card.
+			firstCard.classList.remove('flipped');
+			// Unflip the second card.
+			secondCard.classList.remove('flipped');
+			// Reset the board for the next attempt.
+			resetBoard()
+		}, 1500);
+	}
+}
+
+// Reset the selected cards and unlock the board.
+function resetBoard() {
+	firstCard = null;
+	secondCard = null;
+	lockBoard = false;
 }
