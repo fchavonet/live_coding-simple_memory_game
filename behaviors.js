@@ -66,10 +66,11 @@ function handleCardClick(card) {
 
 // Shuffle the symbols and create the cards on the game board.
 function shuffleAndDisplayCards() {
-	// Shuffle the array randomly.
-	symbols.sort(function () {
-		return 0.5 - Math.random();
-	});
+	// Shuffle the array randomly with Fisher-Yates Shuffle algorithm.
+	for (let i = symbols.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[symbols[i], symbols[j]] = [symbols[j], symbols[i]];
+	}
 
 	// Create a card for each symbol.
 	symbols.forEach(function (symbol) {
