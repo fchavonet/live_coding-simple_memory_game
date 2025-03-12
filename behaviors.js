@@ -43,12 +43,7 @@ function createCard(symbol) {
 // Handle the click event on a card.
 function handleCardClick(card) {
 	// Prevent clicks when the board is locked.
-	if (lockBoard === true) {
-		return;
-	}
-
-	// Ignore if the player clicks the same card twice.
-	if (firstCard === card) {
+	if (lockBoard === true || card.classList.contains("flipped") || card.classList.contains("matched")) {
 		return;
 	}
 
@@ -88,6 +83,10 @@ function checkForMatch() {
 	const secondSymbol = secondCard.querySelector(".card-front span").textContent;
 
 	if (firstSymbol === secondSymbol) {
+		// Mark the cards as matched.
+		firstCard.classList.add("matched");
+		secondCard.classList.add("matched");
+
 		// Increment the match counter.
 		matches++;
 		// Reset the board for the next pair.
@@ -129,8 +128,8 @@ function restartGame() {
 
 	const allCards = document.querySelectorAll(".card");
 	allCards.forEach(function (card) {
-		// Unflip all cards.
-		card.classList.remove("flipped");
+		// Unflip all cards and remove matched class.
+		card.classList.remove("flipped", "matched");
 	});
 
 	setTimeout(function () {
