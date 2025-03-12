@@ -23,6 +23,14 @@ main {
 }
 
 /* SIMPLE MEMORY GAME */
+#game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 10rem);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
 .card {
     width: 10rem;
     height: 10rem;

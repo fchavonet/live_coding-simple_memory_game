@@ -1,7 +1,12 @@
 const gameContainer = document.getElementById("game-container");
 
-// Create a card
-function createCard() {
+const symbols = ["🐱", "🐱", "🐶", "🐶", "🐸", "🐸", "🐼", "🐼"];
+
+// Shuffle symbols and create the cards.
+shuffleAndDisplayCards();
+
+// Create a card with the given symbol.
+function createCard(symbol) {
 	const card = document.createElement("div");
 	card.classList.add("card");
 
@@ -10,6 +15,8 @@ function createCard() {
 
 	const cardFront = document.createElement("div");
 	cardFront.classList.add("card-front");
+	// Display the symbol on the front of the card.
+	cardFront.innerHTML = `<span>${symbol}</span>`;
 
 	const cardBack = document.createElement("div");
 	cardBack.classList.add("card-back");
@@ -26,6 +33,15 @@ function createCard() {
 	});
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-	createCard();
-});
+// Shuffle the symbols and create the cards on the game board.
+function shuffleAndDisplayCards() {
+	// Shuffle the array randomly.
+	symbols.sort(function () {
+		return 0.5 - Math.random();
+	});
+
+	// Create a card for each symbol.
+	symbols.forEach(function (symbol) {
+		createCard(symbol);
+	});
+}
