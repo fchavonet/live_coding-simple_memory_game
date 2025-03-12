@@ -91,6 +91,8 @@ function checkForMatch() {
 		if (matches === totalPairs) {
 			setTimeout(function () {
 				alert("Congratulations, you found all pairs in " + attempts + " attempts!!!");
+				// Restart the game after all pairs are found.
+				restartGame();
 			}, 1000);
 		}
 	} else {
@@ -99,9 +101,9 @@ function checkForMatch() {
 
 		setTimeout(function () {
 			// Unflip the first card.
-			firstCard.classList.remove('flipped');
+			firstCard.classList.remove("flipped");
 			// Unflip the second card.
-			secondCard.classList.remove('flipped');
+			secondCard.classList.remove("flipped");
 			// Reset the board for the next attempt.
 			resetBoard()
 		}, 1500);
@@ -113,4 +115,30 @@ function resetBoard() {
 	firstCard = null;
 	secondCard = null;
 	lockBoard = false;
+}
+
+// Restart the game by shuffling the cards and resetting variables.
+function restartGame() {
+	// Lock the board during reset.
+	lockBoard = true;
+
+	const allCards = document.querySelectorAll(".card");
+	allCards.forEach(function (card) {
+		// Unflip all cards.
+		card.classList.remove("flipped");
+	});
+
+	setTimeout(function () {
+		// Clear the game board.
+		gameContainer.innerHTML = "";
+		// Reset match counter.
+		matches = 0;
+		// Reset attempt counter.
+		attempts = 0;
+		// Reset the board state.
+		resetBoard();
+
+		// Shuffle and display the new set of cards.
+		shuffleAndDisplayCards()
+	}, 1000);
 }
