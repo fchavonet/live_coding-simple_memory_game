@@ -2,6 +2,10 @@ const gameContainer = document.getElementById("game-container");
 
 const symbols = ["🐱", "🐱", "🐶", "🐶", "🐸", "🐸", "🐼", "🐼"];
 
+let firstCard = null;
+let secondCard = null;
+let attempts = 0;
+
 // Shuffle symbols and create the cards.
 shuffleAndDisplayCards();
 
@@ -29,8 +33,31 @@ function createCard(symbol) {
 	gameContainer.appendChild(card);
 
 	card.addEventListener("click", function () {
-		card.classList.add("flipped");
+		handleCardClick(card);
 	});
+}
+
+// Handle the click event on a card.
+function handleCardClick(card) {
+	// Ignore if the player clicks the same card twice.
+	if (firstCard === card) {
+		return;
+	}
+
+	// Flip the card.
+	card.classList.add("flipped");
+
+	if (firstCard === null) {
+		// Set the first selected card.
+		firstCard = card;
+	} else {
+		// Set the second selected card.
+		secondCard = card;
+		// Increment the attempt counter.
+		attempts++;
+
+		console.log(attempts);
+	}
 }
 
 // Shuffle the symbols and create the cards on the game board.
