@@ -27,12 +27,12 @@
 
 ## 📄 <span id="description">Description</span>
 
-This Memory Game was initially developed during a live coding session at Holberton School Toulouse (France), where I work as a Software Engineer and Educational Manager. The goal was to create an interactive and beginner-friendly project to help students understand DOM manipulation, JavaScript event handling, and game logic implementation.
+This project was initially developed during a live coding session at Holberton School Toulouse (France), where I work as a Software Engineer and Educational Manager. The goal was to create an interactive and beginner-friendly project to help students understand DOM manipulation, JavaScript event handling, and game logic implementation.
 
 Watch the live coding sessions here:
 
 - [First live coding sessions (FR)](https://www.youtube.com/watch?v=sbYj49XVRIE)
-- Second live coding session (FR) - COMMING SOON
+- [Second live coding session (FR)](https://www.youtube.com/watch?v=lt3c-V4D3YA)
 
 Since the live session, I have made several improvements and additions, including:
 
@@ -61,13 +61,13 @@ Since the live session, I have made several improvements and additions, includin
 
 ## 📂 <span id="files-description">File description</span>
 
-| **FILE**     | **DESCRIPTION**                                   |
-| :----------: | ------------------------------------------------- |
-| `assets`     | Contains images, sounds, and other resources.     |
-| `index.html` | Main HTML file for the game structure.            |
-| `style.css`  | CSS file containing the game’s visual design.     |
-| `script.js`  | JavaScript logic for handling the game mechanics. |
-| `README.md`  | The README file you are currently reading 😉.     |
+| **FILE**     | **DESCRIPTION**                                     |
+| :----------: | --------------------------------------------------- |
+| `assets`     | Contains the resources required for the repository. |
+| `index.html` | Main HTML structure for the project.                |
+| `style.css`  | Styles and animations for the project.              |
+| `script.js`  | Behavior script for interactivity.                  |
+| `README.md`  | The README file you are currently reading 😉.       |
 
 ## 💻 <span id="installation_and_how_to_use">Installation and how to use</span>
 
@@ -84,19 +84,22 @@ git clone https://github.com/fchavonet/web-simple_memory_game.git
 
 2. Open the repository you've just cloned.
 
-3. Open the `index.html` file in your web browser.
-
 **How to use:**
 
-1. Click on a card to reveal its symbol.
-2. Try to find its matching pair.
-3. If the two selected cards match, they remain flipped.
-4. If they don’t match, they flip back after a short delay.
-5. Continue until all pairs are found.
-6. A sound effect will play when a pair is matched.
-7. Once all pairs are found, a message will display the number of attempts.
+1. Open the `index.html` file in your web browser.
+2. Click on a card to reveal its symbol.
+3. Try to find its matching pair.
+4. If the two selected cards match, they remain flipped.
+5. If they don’t match, they flip back after a short delay.
+6. Continue until all pairs are found.
+7. A sound effect will play when a pair is matched.
+8. Once all pairs are found, a message will display the number of attempts.
 
-You can also directly test the game online by clicking [here](https://fchavonet.github.io/web-simple_memory_game/).
+You can also test the game online by clicking [here](https://fchavonet.github.io/web-simple_memory_game/).
+
+<p align="center">
+    <img src="./assets/images/screenshots.webp">
+</p>
 
 ## 🔧 <span id="whats-next">What's next?</span>
 
