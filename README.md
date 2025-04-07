@@ -78,7 +78,7 @@ Since the live session, I have made several improvements and additions, includin
     - Navigate to the directory where you want to clone the repository.
     - Run the following command:
 
-```
+```bash
 git clone https://github.com/fchavonet/web-simple_memory_game.git
 ```
 
@@ -87,12 +87,19 @@ git clone https://github.com/fchavonet/web-simple_memory_game.git
 **How to use:**
 
 1. Open the `index.html` file in your web browser.
+
 2. Click on a card to reveal its symbol.
+
 3. Try to find its matching pair.
+
 4. If the two selected cards match, they remain flipped.
+
 5. If they don’t match, they flip back after a short delay.
+
 6. Continue until all pairs are found.
+
 7. A sound effect will play when a pair is matched.
+
 8. Once all pairs are found, a message will display the number of attempts.
 
 You can also test the game online by clicking [here](https://fchavonet.github.io/web-simple_memory_game/).
