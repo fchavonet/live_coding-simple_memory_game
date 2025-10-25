@@ -76,7 +76,11 @@ git clone https://github.com/fchavonet/live_coding-simple_memory_game.git
 You can also test the project online by clicking [here](https://fchavonet.github.io/live_coding-simple_memory_game/).
 
 <p align="center">
-    <img src="./assets/images/screenshots/desktop_page_screenshot-light.webp">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./assets/images/screenshots/desktop_page_screenshot-dark.webp">
+        <source media="(prefers-color-scheme: light)" srcset="./assets/images/screenshots/desktop_page_screenshot-light.webp">
+        <img src="./assets/images/screenshots/desktop_page_screenshot-light.webp" alt="Screenshot">
+    </picture>
 </p>
 
 ## What's Next?
