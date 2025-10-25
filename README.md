@@ -73,10 +73,9 @@ git clone https://github.com/fchavonet/web-simple_memory_game.git
 
 8. Once all pairs are found, a message will display the number of attempts.
 
-You can also test the project online by clicking [here](https://fchavonet.github.io/web-simple_memory_game/).
+You can also test the project online by clicking [here](https://fchavonet.github.io/live_coding-simple_memory_game/).
 
 <p align="center">
-    <img src="./assets/images/screenshots.webp">
 </p>
 
 ## What's Next?
