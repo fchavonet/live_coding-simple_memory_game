@@ -50,7 +50,7 @@ Since the live session, I have made several improvements and additions, includin
     - Run the following command:
 
 ```
-git clone https://github.com/fchavonet/web-simple_memory_game.git
+git clone https://github.com/fchavonet/live_coding-simple_memory_game.git
 ```
 
 2. Open the cloned repository.
